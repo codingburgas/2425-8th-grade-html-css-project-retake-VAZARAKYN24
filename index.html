@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<head>
+  <title>Ресторант Кехлибар</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #F5F3EA;
+      color: #2B1F1F;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background-color: #ffffff;
+      padding: 10px 40px;
+      border-bottom: 2px solid #C28840;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .menu img {
+      height: 60px;
+    }
+
+    .menuText h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    .menuText a {
+      text-decoration: none;
+      color: #2B1F1F;
+      padding-right: 20px;
+      transition: color 0.3s;
+    }
+
+    .menuText a:hover {
+      color: #C28840;
+    }
+
+    .sidebar {
+  
+  height: 100vh;
+  background-color: #2B1F1F;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+}
+
+.sidebar h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar a {
+  display: block;
+  margin: 10px 0;
+  color: #C28840;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: #ffffff;
+}
+
+.nameOfTheRestaurant {
+  margin-left: 240px;
+  padding: 40px;
+}
+
+    .nameOfTheRestaurant {
+      margin-left: 240px;
+      padding: 40px;
+    }
+
+    .nameOfTheRestaurant h1 {
+      font-size: 32px;
+      color: #C28840;
+    }
+
+    .nameOfTheRestaurant p {
+      font-size: 18px;
+      color: #2B1F1F;
+    }
+
+      .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+      }
+
+      .nameOfTheRestaurant {
+        margin-left: 0;
+        padding: 20px;
+      }
+  </style>
+</head>
+<body>
+
+  <header>
+  <div class="menu">
+    <a href="index.html">
+      <img src="/images/290cdc00-01d4-4c9b-83d0-6cd9ae8fc94a.png" alt="logo">
+    </a>
+    <div class="menuText">
+      <h2>
+        <a href="index.html">Начало</a>
+        <a href="proposals.html">Предложения</a>
+      </h2>
+    </div>
+  </div>
+  </header>
+
+
+  <div class="sidebar">
+    <h1>Навигация</h1>
+    <ul>
+      <li><a href="aboutUs.html">За нас</a></li>
+      <li><a href="contactUs.html">Контакт</a></li>
+    </ul>
+  </div>
+
+  <div class="nameOfTheRestaurant">
+    <h1>Ресторант "Кехлибар"</h1>
+    <p>Добре дошли в нашия уютен ресторант, където традицията среща вкуса.</p>
+  </div>
+
+</body>
+</html>
