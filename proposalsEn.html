@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Ресторант Кехлибар</title>
+  <title>Menu – Amber Restaurant</title>
   <style>
     body {
       margin: 0;
@@ -13,30 +14,46 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      background-color: #ffffff;
+      background-color: #fff;
       padding: 10px 40px;
-     padding-left: 350px;
+      position: relative;
+      z-index: 2;
     }
 
     header img {
       height: 60px;
     }
 
-    header h2 {
+    header h1 {
       margin: 0;
-      font-size: 18px;
-
+      font-size: 24px;
+      color: #2B1F1F;
     }
 
     header a {
       color: #2B1F1F;
-      padding-right: 20px;
-      
+      text-decoration: none;
+      margin-left: 20px;
     }
 
     header a:hover {
       color: #C28840;
+    }
+
+    .videoBackground {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    .videoBackground video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(25%);
     }
 
     .sidebar {
@@ -48,6 +65,7 @@
       left: 0;
       top: 0;
       color: #ffffff;
+      z-index: 1;
     }
 
     .sidebar h1 {
@@ -57,7 +75,7 @@
 
     .sidebar a {
       display: block;
-      margin: 10px ;
+      margin: 10px 0;
       color: burlywood;
       text-decoration: none;
     }
@@ -66,77 +84,209 @@
       color: bisque;
     }
 
-    .signIn {
-      color: bisque;
-      size: 20px;
+    .topRightLinks {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
-    .signIn :hover {
+
+    .signIn a {
+      color: bisque;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .signIn a:hover {
       color: white;
     }
 
-    .first{
-      padding-left: 400px;
+    .menuText a {
+      margin-right: 15px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .mainContent {
+      margin-left: 270px;
+      padding: 40px;
+      color: #ffffff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .menuSection {
+      background-color: rgba(43, 31, 31, 0.8);
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 900px;
+      margin-bottom: 40px;
+    }
+
+    .menuSection h2 {
+      color: burlywood;
+      border-bottom: 1px solid bisque;
+      padding-bottom: 5px;
+    }
+
+    .menuItem {
+      margin-bottom: 20px;
+    }
+
+    .menuItem h3 {
+      margin: 0;
+      color: bisque;
+    }
+
+    .menuItem p {
+      margin: 5px 0;
+    }
+
+    .bill {
+      position: fixed;
+      right: 30px;
+      top: 140px;
+      background-color: rgba(255, 248, 220, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 250px;
+      color: #2B1F1F;
+      z-index: 2;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .bill h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #C28840;
+    }
+
+    .bill ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    .bill ul li {
+      margin-bottom: 5px;
+    }
+
+    .bill .total {
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .checkoutBtn {
+      margin-top: 10px;
+      background-color: #2B1F1F;
+      color: bisque;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .checkoutBtn:hover {
+      background-color: #C28840;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <a href="index.html">
-        <img src="/images/290cdc00-01d4-4c9b-83d0-6cd9ae8fc94a.png" alt="logo"> 
-        </a> 
-
-
-
-        <div class="zgl">
-          <a href="index.html">
-        <h1> Ресторант "Кехлибар" </h1>
-        </a>
+    <a href="indexEn.html">
+      <img src="/images/290cdc00-01d4-4c9b-83d0-6cd9ae8fc94a.png" alt="logo">
+    </a>
+    <div class="zgl">
+      <a href="indexEn.html"><h1>Amber Restaurant</h1></a>
+    </div>
+    <div class="topRightLinks">
+      <div class="signIn">
+        <a href="signIn.html">Sign in</a>
       </div>
-
-
-
-<div class="signIn">
-  <a href="signIn.html">
-      Sign in
-      </a>
-    </div>
-
-
-    
-    <div class="language">
-      <a href="indexEn.html">English</a>
-    </div>
-
-
-
+      <div class="language">
+        <a href="proposals.html">Български</a>
+      </div>
       <div class="menuText">
-        <h2>
-          <a href="index.html">Начало</a>
-          <a href="proposals.html">Предложения</a>
-        </h2>
+        <a href="indexEn.html">Home</a>
+        <a href="proposalsEn.html">Menu</a>
       </div>
+    </div>
   </header>
 
-
+  <div class="videoBackground">
+    <video autoplay loop muted playsinline>
+      <source src="images/background.mp4" type="video/mp4">
+    </video>
+  </div>
 
   <div class="sidebar">
-    <h1>Навигация</h1>
+    <h1>Navigation</h1>
     <ul>
-      <li><a href="aboutUs.html">За нас</a></li>
-      <li><a href="contactUs.html">Контакт</a></li>
+      <li><a href="aboutUsEn.html">About Us</a></li>
+      <li><a href="contactUsEn.html">Contact</a></li>
     </ul>
   </div>
 
+  <div class="mainContent">
+    <div class="menuSection">
+      <h2>Starters</h2>
+      <div class="menuItem"><h3>Bruschetta</h3><p>Toasted bread topped with tomatoes, garlic, and basil.</p></div>
+      <div class="menuItem"><h3>Cheese Plate</h3><p>Selection of local and imported cheeses, nuts, and fruits.</p></div>
+      <div class="menuItem"><h3>Amber Soup</h3><p>Traditional soup with chicken, vegetables, and spices.</p></div>
+    </div>
 
+    <div class="menuSection">
+      <h2>Main Courses</h2>
+      <div class="menuItem"><h3>Grilled Lamb with Rosemary</h3><p>Served with roasted potatoes and seasonal vegetables.</p></div>
+      <div class="menuItem"><h3>Amber Honey Chicken</h3><p>Chicken fillet glazed with homemade honey sauce, served with rice.</p></div>
+      <div class="menuItem"><h3>Beef Stroganoff</h3><p>Tender beef strips in creamy mushroom sauce over mashed potatoes.</p></div>
+      <div class="menuItem"><h3>Vegetarian Risotto</h3><p>Rice with zucchini, carrots, mushrooms, and parmesan.</p></div>
+    </div>
 
-  <div class="first">
-    
-  <h2>  Добре дошли в нашия уютен ресторант, където традицията среща вкуса.</h2>
+    <div class="menuSection">
+      <h2>Salads</h2>
+      <div class="menuItem"><h3>Shopska Salad</h3><p>Tomatoes, cucumbers, peppers, onion, and grated white cheese.</p></div>
+      <div class="menuItem"><h3>Greek Salad</h3><p>Feta, olives, cucumbers, tomatoes, oregano, and olive oil.</p></div>
+      <div class="menuItem"><h3>Amber Caesar</h3><p>Grilled chicken, lettuce, croutons, and caesar dressing.</p></div>
+    </div>
+
+    <div class="menuSection">
+      <h2>Desserts</h2>
+      <div class="menuItem"><h3>Homemade Baklava</h3><p>Traditional dessert with walnuts and sweet syrup.</p></div>
+      <div class="menuItem"><h3>Chocolate Lava Cake</h3><p>Served warm with a scoop of vanilla ice cream.</p></div>
+      <div class="menuItem"><h3>Fruit Delight</h3><p>Seasonal fruits with honey and mint.</p></div>
+    </div>
+
+    <div class="menuSection">
+      <h2>Drinks</h2>
+      <div class="menuItem"><h3>Mineral Water</h3><p>Still or sparkling – 500ml.</p></div>
+      <div class="menuItem"><h3>Homemade Lemonade</h3><p>Fresh lemon juice, mint, and brown sugar.</p></div>
+      <div class="menuItem"><h3>Red / White Wine</h3><p>Glass or bottle from local vineyards.</p></div>
+      <div class="menuItem"><h3>Espresso / Cappuccino</h3><p>Freshly brewed coffee drinks.</p></div>
+    </div>
+
+    <div class="menuSection">
+      <h2>Alcohol</h2>
+      <div class="menuItem"><h3>Rakia</h3><p>50ml – grape, plum or apricot.</p></div>
+      <div class="menuItem"><h3>Whiskey</h3><p>50ml – Scotch, Irish or Bourbon.</p></div>
+      <div class="menuItem"><h3>Vodka</h3><p>50ml – classic or flavored.</p></div>
+      <div class="menuItem"><h3>Amber Cocktail</h3><p>Homemade cocktail with rum, honey, and lemon.</p></div>
+      <div class="menuItem"><h3>Beer</h3><p>500ml – draft or bottled, light or dark.</p></div>
+    </div>
   </div>
 
-
-
-
+  <div class="bill">
+    <h2>Our propose </h2>
+    <ul>
+      <li>Amber Honey Chicken - 12.99 лв</li>
+      <li>Shopska Salad - 6.50 лв</li>
+      <li>Homemade Baklava - 5.00 лв</li>
+    </ul>
+    <p class="total">Total: <strong>24.49 лв</strong></p>
+    <button class="checkoutBtn">Checkout</button>
+  </div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Ресторант Кехлибар</title>
+  <title>Amber Restaurant</title>
   <style>
     body {
       margin: 0;
@@ -13,46 +13,46 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      background-color: #ffffff;
+      background-color: #fff;
       padding: 10px 40px;
-     padding-left: 350px;
+      position: relative;
+      z-index: 2;
     }
 
     header img {
       height: 60px;
     }
 
-    header h2 {
+    header h1 {
       margin: 0;
-      font-size: 18px;
-
+      font-size: 24px;
+      color: #2B1F1F;
     }
 
     header a {
       color: #2B1F1F;
-      padding-right: 20px;
-      
+      text-decoration: none;
+      margin-left: 20px;
     }
-
-    .video-background {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
-}
-
-.video-background video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(25%);
-}
 
     header a:hover {
       color: #C28840;
+    }
+
+    .video-background {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    .video-background video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(25%);
     }
 
     .sidebar {
@@ -64,6 +64,7 @@
       left: 0;
       top: 0;
       color: #ffffff;
+      z-index: 1;
     }
 
     .sidebar h1 {
@@ -73,7 +74,7 @@
 
     .sidebar a {
       display: block;
-      margin: 10px ;
+      margin: 10px 0;
       color: burlywood;
       text-decoration: none;
     }
@@ -82,87 +83,90 @@
       color: bisque;
     }
 
-    .signIn {
-      color: bisque;
-      size: 20px;
+    .top-right-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
-    .signIn :hover {
+
+    .signIn a {
+      color: bisque;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .signIn a:hover {
       color: white;
     }
 
-    .first{
-      padding-left: 425px;
-      color:#ffffff
+    .main-content {
+      margin-left: 270px;
+      padding: 40px;
+      color: #ffffff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .menuText a {
+      margin-right: 15px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .menuText {
+      display: flex;
+      align-items: center;
+    }
+
+    .zgl h1 {
+      margin: 0;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <a href="index.html">
-        <img src="/images/290cdc00-01d4-4c9b-83d0-6cd9ae8fc94a.png" alt="logo"> 
-        </a> 
+    <a href="indexEn.html">
+      <img src="/images/290cdc00-01d4-4c9b-83d0-6cd9ae8fc94a.png" alt="logo">
+    </a>
 
+    <div class="zgl">
+      <a href="indexEn.html"><h1>Amber Restaurant</h1></a>
+    </div>
 
-
-        <div class="zgl">
-          <a href="index.html">
-        <h1> Restaurant </h1>
-        </a>
+    <div class="top-right-links">
+      <div class="signIn">
+        <a href="signIn.html">Sign in</a>
       </div>
 
-
-
-<div class="signIn">
-  <a href="signIn.html">
-      Sign in
-      </a>
-    </div>
-
-
-    
-    <div class="language">
-      <a href="indexEn.html">English</a>
-    </div>
-
-
+      <div class="language">
+        <a href="index.html">Български</a>
+      </div>
 
       <div class="menuText">
-        <h2>
-          <a href="index.html">Начало</a>
-          <a href="proposals.html">Предложения</a>
-        </h2>
+        <a href="indexEn.html">Home</a>
+        <a href="proposalsEn.html">Menu</a>
       </div>
+    </div>
   </header>
-
-
 
   <div class="video-background">
     <video autoplay loop muted playsinline>
-      <source src="images/background.mp4">
+      <source src="images/background.mp4" type="video/mp4">
     </video>
   </div>
 
-
-
-
   <div class="sidebar">
-    <h1>Навигация</h1>
+    <h1>Navigation</h1>
     <ul>
-      <li><a href="aboutUs.html">За нас</a></li>
-      <li><a href="contactUs.html">Контакт</a></li>
+      <li><a href="aboutUsEn.html">About Us</a></li>
+      <li><a href="contactUsEn.html">Contact</a></li>
     </ul>
   </div>
 
-
-
-  <div class="first">
-    
-  <h2>  Добре дошли в нашия уютен ресторант, където традицията среща вкуса.</h2>
+  <div class="main-content">
+    <h2>Welcome to our cozy restaurant, where tradition meets flavor.</h2>
   </div>
-
-
-
 
 </body>
 </html>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <style>
-body {
+<head>
+  <title>Меню – Ресторант Кехлибар</title>
+  <style>
+    body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: beige;
@@ -13,9 +14,10 @@ body {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: #ffffff;
+      background-color: #fff;
       padding: 10px 40px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
     }
 
     header img {
@@ -25,25 +27,36 @@ body {
     header h1 {
       margin: 0;
       font-size: 24px;
-    }
-
-    header h2 {
-      margin: 0;
-      font-size: 18px;
-      display: flex;
-      gap: 20px;
+      color: #2B1F1F;
     }
 
     header a {
       color: #2B1F1F;
       text-decoration: none;
+      margin-left: 20px;
     }
 
     header a:hover {
       color: #C28840;
     }
 
-    .sidebar {
+    .videoBackground {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+    }
+
+    .videoBackground video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(25%);
+    }
+
+    .sideBar {
       height: 100vh;
       width: 240px;
       background-color: #2B1F1F;
@@ -52,73 +65,228 @@ body {
       left: 0;
       top: 0;
       color: #ffffff;
+      z-index: 1;
     }
 
-    .sidebar h1 {
+    .sideBar h1 {
       font-size: 20px;
       margin-bottom: 20px;
     }
 
-    .sidebar a {
+    .sideBar a {
       display: block;
       margin: 10px 0;
       color: burlywood;
       text-decoration: none;
     }
 
-    .sidebar a:hover {
+    .sideBar a:hover {
       color: bisque;
     }
 
-    .signIn {
+    .topRightLinks {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .signIn a {
       color: bisque;
-      font-size: 20px;
+      font-size: 16px;
+      text-decoration: none;
     }
 
     .signIn a:hover {
       color: white;
     }
 
-    .first {
-      padding-left: 300px;
-      margin-top: 100px;
+    .menuText a {
+      margin-right: 15px;
+      font-size: 18px;
+      text-decoration: none;
     }
-        </style>
-    </head>
-    <header>
-        <header>
-   
-            <a href="index.html">
-              <img src="/images/290cdc00-01d4-4c9b-83d0-6cd9ae8fc94a.png" alt="logo"> 
-              </a> 
-      
-      
-      
-              <div class="zgl">
-                <a href="index.html">
-              <h1> Ресторант "Кехлибар" </h1>
-              </a>
-            </div>
-      
-      
-      
-            <div class="menuText">
-              <h2>
-                <a href="index.html">Начало</a>
-                <a href="proposals.html">Предложения</a>
-              </h2>
-            </div>
-        </header>
-        <body>
 
+    .mainContent {
+      margin-left: 270px;
+      padding: 40px;
+      color: #ffffff;
+      position: relative;
+      z-index: 1;
+    }
 
-            
-            <div class="sidebar">
-                <h1>Навигация</h1>
-                <ul>
-                  <li><a href="aboutUs.html">За нас</a></li>
-                  <li><a href="contactUs.html">Контакт</a></li>
-                </ul>
-              </div>
-        </body>
+    .menuSection {
+      background-color: rgba(43, 31, 31, 0.8);
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 900px;
+      margin-bottom: 40px;
+    }
+
+    .menuSection h2 {
+      color: burlywood;
+      border-bottom: 1px solid bisque;
+      padding-bottom: 5px;
+    }
+
+    .menuItem {
+      margin-bottom: 20px;
+    }
+
+    .menuItem h3 {
+      margin: 0;
+      color: bisque;
+    }
+
+    .menuItem p {
+      margin: 5px 0;
+    }
+
+    .bill {
+      position: fixed;
+      right: 30px;
+      top: 140px;
+      background-color: rgba(255, 248, 220, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 250px;
+      color: #2B1F1F;
+      z-index: 2;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .bill h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #C28840;
+    }
+
+    .bill ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    .bill ul li {
+      margin-bottom: 5px;
+    }
+
+    .bill .total {
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .checkoutBtn {
+      margin-top: 10px;
+      background-color: #2B1F1F;
+      color: bisque;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .checkoutBtn:hover {
+      background-color: #C28840;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img src="/images/290cdc00-01d4-4c9b-83d0-6cd9ae8fc94a.png" alt="logo">
+    </a>
+    <div class="zgl">
+      <a href="index.html"><h1>Ресторант Кехлибар</h1></a>
+    </div>
+    <div class="topRightLinks">
+      <div class="signIn">
+        <a href="signIn.html">Вход</a>
+      </div>
+      <div class="language">
+        <a href="proposalsEn.html">English</a>
+      </div>
+      <div class="menuText">
+        <a href="index.html">Начало</a>
+        <a href="proposals.html">Меню</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="videoBackground">
+    <video autoplay loop muted playsinline>
+      <source src="images/background.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="sideBar">
+    <h1>Навигация</h1>
+    <ul>
+      <li><a href="aboutUs.html">За нас</a></li>
+      <li><a href="contactUs.html">Контакти</a></li>
+    </ul>
+  </div>
+
+  <div class="mainContent">
+    <div class="menuSection">
+      <h2>Предястия</h2>
+      <div class="menuItem"><h3>Брускета</h3><p>Препечен хляб с домати, чесън и босилек.</p></div>
+      <div class="menuItem"><h3>Плато сирена</h3><p>Подбор на местни и вносни сирена, ядки и плодове.</p></div>
+      <div class="menuItem"><h3>Кехлибарена супа</h3><p>Традиционна супа с пиле, зеленчуци и подправки.</p></div>
+    </div>
+
+    <div class="menuSection">
+      <h2>Основни ястия</h2>
+      <div class="menuItem"><h3>Печено агнешко с розмарин</h3><p>Сервира се с печени картофи и сезонни зеленчуци.</p></div>
+      <div class="menuItem"><h3>Пиле с кехлибарен мед</h3><p>Пилешко филе с домашен меден сос, сервирано с ориз.</p></div>
+      <div class="menuItem"><h3>Бифстроганов</h3><p>Крехки парчета говеждо в кремообразен гъбен сос върху картофено пюре.</p></div>
+      <div class="menuItem"><h3>Вегетарианско ризото</h3><p>Ориз с тиквички, моркови, гъби и пармезан.</p></div>
+    </div>
+
+    <div class="menuSection">
+      <h2>Салати</h2>
+      <div class="menuItem"><h3>Шопска салата</h3><p>Домати, краставици, пипер, лук и настъргано бяло сирене.</p></div>
+      <div class="menuItem"><h3>Гръцка салата</h3><p>Фета, маслини, краставици, домати, риган и зехтин.</p></div>
+      <div class="menuItem"><h3>Кехлибарена Цезар</h3><p>Печено пиле, маруля, крутони и цезар сос.</p></div>
+    </div>
+
+    <div class="menuSection">
+      <h2>Десерти</h2>
+      <div class="menuItem"><h3>Домашен баклава</h3><p>Традиционен десерт с орехи и сладък сироп.</p></div>
+      <div class="menuItem"><h3>Шоколадов лава кейк</h3><p>Сервиран топъл с ванилов сладолед.</p></div>
+      <div class="menuItem"><h3>Плодов деликатес</h3><p>Сезонни плодове с мед и мента.</p></div>
+    </div>
+
+    <div class="menuSection">
+      <h2>Напитки</h2>
+      <div class="menuItem"><h3>Минерална вода</h3><p>Газирана или негазирана – 500 мл.</p></div>
+      <div class="menuItem"><h3>Домашна лимонада</h3><p>Прясно изцеден лимон, мента и кафява захар.</p></div>
+      <div class="menuItem"><h3>Червено / бяло вино</h3><p>Чаша или бутилка от местни лозя.</p></div>
+      <div class="menuItem"><h3>Еспресо / Капучино</h3><p>Прясно сварени кафе напитки.</p></div>
+    </div>
+
+    <div class="menuSection">
+      <h2>Алкохол</h2>
+      <div class="menuItem"><h3>Ракия</h3><p>50 мл – гроздова, сливова или кайсиева.</p></div>
+      <div class="menuItem"><h3>Уиски</h3><p>50 мл – шотландско, ирландско или бурбон.</p></div>
+      <div class="menuItem"><h3>Водка</h3><p>50 мл – класическа или с аромат.</p></div>
+      <div class="menuItem"><h3>Кехлибарен коктейл</h3><p>Домашен коктейл с ром, мед и лимон.</p></div>
+      <div class="menuItem"><h3>Бира</h3><p>500 мл – наливна или бутилка, светла или тъмна.</p></div>
+    </div>
+  </div>
+
+  <div class="bill">
+    <h2>Нашето предложение</h2>
+    <ul>
+      <li>Пиле с кехлибарен мед - 12.99 лв</li>
+      <li>Шопска салата - 6.50 лв</li>
+      <li>Домашен баклава - 5.00 лв</li>
+    </ul>
+    <p class="total">Общо: <strong>24.49 лв</strong></p>
+    <button class="checkoutBtn">Плати</button>
+  </div>
+</body>
 </html>
